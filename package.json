@@ -29,6 +29,7 @@
     "build": "tsc && gulp build:icons",
     "dev": "tsc --watch",
     "prepublishOnly": "npm run build",
+    "test": "jest",
     "lint": "eslint nodes credentials --ext .ts",
     "lintfix": "eslint nodes credentials --ext .ts --fix"
   },
@@ -45,9 +46,12 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^30.0.0",
     "@types/node": "^20.0.0",
     "gulp": "^4.0.2",
+    "jest": "^30.3.0",
     "n8n-workflow": "^1.0.0",
+    "ts-jest": "^29.4.6",
     "typescript": "~5.4.0"
   },
   "peerDependencies": {
