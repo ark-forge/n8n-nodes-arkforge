@@ -1,0 +1,59 @@
+{
+  "name": "n8n-nodes-arkforge",
+  "version": "0.1.0",
+  "description": "n8n community node for ArkForge Trust Layer — certify any AI API call with cryptographic proof of execution",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "n8n-nodes",
+    "arkforge",
+    "trust-layer",
+    "ai-certification",
+    "multi-llm",
+    "cryptographic-proof",
+    "api-proxy"
+  ],
+  "license": "MIT",
+  "homepage": "https://arkforge.tech",
+  "author": {
+    "name": "ArkForge",
+    "email": "contact@arkforge.fr",
+    "url": "https://arkforge.tech"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ark-forge/n8n-nodes-arkforge.git"
+  },
+  "main": "dist/nodes/ArkforgeTrustLayer/ArkforgeTrustLayer.node.js",
+  "scripts": {
+    "build": "tsc && gulp build:icons",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "lint": "eslint nodes credentials --ext .ts",
+    "lintfix": "eslint nodes credentials --ext .ts --fix"
+  },
+  "files": [
+    "dist"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/ArkforgeApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/ArkforgeTrustLayer/ArkforgeTrustLayer.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "gulp": "^4.0.2",
+    "n8n-workflow": "^1.0.0",
+    "typescript": "~5.4.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
